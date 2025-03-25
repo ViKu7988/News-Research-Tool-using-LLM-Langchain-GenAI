@@ -1,64 +1,61 @@
 
-# RockyBot: News Research Tool 
+# News Research Tool Dashboard
 
-RockyBot is a user-friendly news research tool designed for effortless information retrieval. Users can input article URLs and ask questions to receive relevant insights from the stock market and financial domain.
+This News Research Tool Dashboard is an intuitive tool designed using Python's Streamlit library to streamline information retrieval. Users can input article URLs and ask questions to get relevant insights using LangChain, OpenAI embeddings, and FAISS for efficient data management.
 
 ![](dashboard.jpeg)
 
 ## Features
 
-- Load URLs or upload text files containing URLs to fetch article content.
-- Process article content through LangChain's UnstructuredURL Loader
-- Construct an embedding vector using OpenAI's embeddings and leverage FAISS, a powerful similarity search library, to enable swift and effective retrieval of relevant information
-- Interact with the LLM's (Chatgpt) by inputting queries and receiving answers along with source URLs.
+- Load URLs to fetch article content.
+- Perform web scraping using LangChain's Unstructured URL Loader.
+- Create embedding vectors using OpenAI embeddings and apply FAISS for effective similarity search and retrieval.
+- Interact with the LLM (ChatGPT) by submitting queries and receiving accurate answers along with source URLs.
 
 
 ## Installation
 
-1.Clone this repository to your local machine using:
-
-```bash
-  git clone https://github.com/codebasics/langchain.git
-```
-2.Navigate to the project directory:
-
-```bash
-  cd 2_news_research_tool_project
-```
-3. Install the required dependencies using pip:
-
-```bash
-  pip install -r requirements.txt
-```
-4.Set up your OpenAI API key by creating a .env file in the project root and adding your API
-
-```bash
-  OPENAI_API_KEY=your_api_key_here
-```
+- Clone the Repository: Download the repository to your local machine.
+- 
+- Install Dependencies: Ensure you have Python installed, then install the required packages using:
+  ---
 ## Usage/Examples
 
-1. Run the Streamlit app by executing:
-```bash
+- Run the Streamlit app by executing:
+```
+pip install -r requirements.txt
+---
+
+- Set Up OpenAI API Key: Create a .env file in the project root and add your OpenAI API key using the format:
+---
+OPENAI_API_KEY=your_api_key_here
+---
+-Run the Application: Execute the following command to launch the Streamlit app:
+---
+streamlit run main.py
+---
+
 streamlit run main.py
 
 ```
 
-2.The web app will open in your browser.
+- Start the Application:The web app will open in your browser.
 
-- On the sidebar, you can input URLs directly.
+- Input URLs: On the sidebar, input two URLs for analysis.
 
-- Initiate the data loading and processing by clicking "Process URLs."
+- Process URLs: Click on "Process URLs" to load and analyze the articles. The content will be split using LangChain's RecursiveCharacterTextSplitter.
 
-- Observe the system as it performs text splitting, generates embedding vectors, and efficiently indexes them using FAISS.
+- Generate Embeddings: FAISS will build and store the embedding vectors using OpenAI's embedding model.
+
+- Ask Questions: Enter any relevant question, and the LLM will generate responses based on the analyzed content.
 
 - The embeddings will be stored and indexed using FAISS, enhancing retrieval speed.
 
-- The FAISS index will be saved in a local file path in pickle format for future use.
-- One can now ask a question and get the answer based on those news articles
-- In video tutorial, we used following news articles
-  - https://www.moneycontrol.com/news/business/tata-motors-mahindra-gain-certificates-for-production-linked-payouts-11281691.html
-  - https://www.moneycontrol.com/news/business/tata-motors-launches-punch-icng-price-starts-at-rs-7-1-lakh-11098751.html
-  - https://www.moneycontrol.com/news/business/stocks/buy-tata-motors-target-of-rs-743-kr-choksey-11080811.html
+- View Sources: The dashboard will provide the source URLs used to generate the response.
+
+- In this case, i used following news articles
+  - https://www.moneycontrol.com/news/opinion/germany-finally-shakes-off-its-fiscal-straitjacket-to-cope-with-tectonic-shifts-12972917.html
+  - https://www.moneycontrol.com/news/business/companies/centre-says-quashing-volkswagen-s-1-4-billion-tax-bill-would-be-catastrophic-12972698.html
 
 ## Project Structure
 
