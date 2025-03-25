@@ -31,7 +31,7 @@ This News Research Tool Dashboard is an intuitive tool designed using Python's S
 
 ```bash
   OPENAI_API_KEY=your_api_key_here
-
+```
 ## Usage/Examples
 
 
