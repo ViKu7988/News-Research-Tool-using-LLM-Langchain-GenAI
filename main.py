@@ -68,4 +68,4 @@ if query:
                     st.write(source)
 
 st.markdown("---")
-st.markdown("**Project by Vivek Kumar**")
+st.markdown("Project by Vivek Kumar")
